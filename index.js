@@ -26,7 +26,7 @@ module.exports = bundler => {
         // config
         let config = Object.assign({}, DEFAULT_CONFIG, pkg.staticFiles);
         if (pkg.staticPath) { // parcel-plugin-static-files-copy<1.2.5
-            config.staticPath = pkg.staticPath;
+            config.staticPath = process.env.PARCEL_STATIC_DIR || pkg.staticPath;
         }
         if (!Array.isArray(config.staticPath)) { // ensure array
             config.staticPath = [ config.staticPath ];
