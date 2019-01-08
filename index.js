@@ -30,7 +30,7 @@ module.exports = bundler => {
         }
         
         if (process.env.PARCEL_STATIC_DIR) {
-           config.staticPath = process.enc.PARCEL_STATIC_DIR;
+           config.staticPath = process.env.PARCEL_STATIC_DIR;
         }
 
         if (!Array.isArray(config.staticPath)) { // ensure array
